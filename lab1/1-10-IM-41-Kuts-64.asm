@@ -21,7 +21,6 @@ db "і надзвичайно щиру",13,10
 db "Любов Степанівну ПРИБИЛО",13,10
 db "Було дуже весело виконувати лабу <3",13,10
 db "Як гадаєте, достатньо особистої інформації?",0
-
 msgTitle db "Лабораторна 1",0
 
 .code
@@ -34,6 +33,6 @@ mov r9d, MB_YESNO or MB_ICONQUESTION
 call MessageBoxA
 xor ecx, ecx
 call ExitProcess
-main endp
 
+main endp
 end

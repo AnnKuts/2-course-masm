@@ -6,7 +6,6 @@ option casemap:none
 include \masm32\include\windows.inc
 include \masm32\include\kernel32.inc
 include \masm32\include\user32.inc
-
 includelib \masm32\lib\kernel32.lib
 includelib \masm32\lib\user32.lib
 
@@ -24,7 +23,6 @@ db "і надзвичайно щиру",13,10
 db "Любов Степанівну ПРИБИЛО",13,10
 db "Було дуже весело виконувати лабу <3",13,10
 db "Як гадаєте, достатньо особистої інформації?",0
-
 msgTitle db "Лабораторна 1",0
 
 .code

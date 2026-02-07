@@ -1,0 +1,21 @@
+ Assembling: C:\Users\annkuts\2-course-masm\lab1\1-10-IM-41-Kuts-64.asm
+C:\Users\annkuts\2-course-masm\lab1\1-10-IM-41-Kuts-64.asm(14
+C:\Users\annkuts\2-course-masm\lab1\1-10-IM-41-Kuts-64.asm(14) : erroC:\Users\annkuts\2-course-masm\lab1\1-10-IM-41-Kuts-64.asm(15
+C:\Users\annkuts\2-course-masm\lab1\1-10-IM-41-Kuts-64.asm(15) : erroC:\Users\annkuts\2-course-masm\lab1\1-10-IM-41-Kuts-64.asm(16
+C:\Users\annkuts\2-course-masm\lab1\1-10-IM-41-Kuts-64.asm(16) : erroC:\Users\annkuts\2-course-masm\lab1\1-10-IM-41-Kuts-64.asm(17
+C:\Users\annkuts\2-course-masm\lab1\1-10-IM-41-Kuts-64.asm(17) : erroC:\Users\annkuts\2-course-masm\lab1\1-10-IM-41-Kuts-64.asm(18
+C:\Users\annkuts\2-course-masm\lab1\1-10-IM-41-Kuts-64.asm(18) : erroC:\Users\annkuts\2-course-masm\lab1\1-10-IM-41-Kuts-64.asm(19
+C:\Users\annkuts\2-course-masm\lab1\1-10-IM-41-Kuts-64.asm(19) : erroC:\Users\annkuts\2-course-masm\lab1\1-10-IM-41-Kuts-64.asm(20
+C:\Users\annkuts\2-course-masm\lab1\1-10-IM-41-Kuts-64.asm(20) : erroC:\Users\annkuts\2-course-masm\lab1\1-10-IM-41-Kuts-64.asm(21
+C:\Users\annkuts\2-course-masm\lab1\1-10-IM-41-Kuts-64.asm(21) : erroC:\Users\annkuts\2-course-masm\lab1\1-10-IM-41-Kuts-64.asm(22
+C:\Users\annkuts\2-course-masm\lab1\1-10-IM-41-Kuts-64.asm(22) : erroC:\Users\annkuts\2-course-masm\lab1\1-10-IM-41-Kuts-64.asm(23
+C:\Users\annkuts\2-course-masm\lab1\1-10-IM-41-Kuts-64.asm(23) : erroC:\Users\annkuts\2-course-masm\lab1\1-10-IM-41-Kuts-64.asm(24
+C:\Users\annkuts\2-course-masm\lab1\1-10-IM-41-Kuts-64.asm(24) : erroC:\Users\annkuts\2-course-masm\lab1\1-10-IM-41-Kuts-64.asm(25
+C:\Users\annkuts\2-course-masm\lab1\1-10-IM-41-Kuts-64.asm(25) : erroC:\Users\annkuts\2-course-masm\lab1\1-10-IM-41-Kuts-64.asm(26
+C:\Users\annkuts\2-course-masm\lab1\1-10-IM-41-Kuts-64.asm(26) : erroC:\Users\annkuts\2-course-masm\lab1\1-10-IM-41-Kuts-64.asm(28
+C:\Users\annkuts\2-course-masm\lab1\1-10-IM-41-Kuts-64.asm(28) : erroC:\Users\annkuts\2-course-masm\lab1\1-10-IM-41-Kuts-64.asm(44
+ : error A2008:syntax error : main
+C:\Users\annkuts\2-course-masm\lab1\1-10-IM-41-Kuts-64.asm(44) end of file
+C:\Users\annkuts\2-course-masm\lab1\1-10-IM-41-Kuts-64.asm(34)lgTe
+C:\Users\annkuts\2-course-masm\lab1\1-10-IM-41-Kuts-64.asm(35)olgTi
+C:\Users\annkuts\2-course-masm\lab1\1-10-IM-41-Kuts-64.asm(38)leBo

@@ -15,7 +15,7 @@ add_int_line PROTO :DWORD, :DWORD
 add_float_line PROTO :DWORD, :REAL8
 
 .data
-    ; Константи
+    ; Константи:
     a_byte          db 3            ; Byte
     a_byte_neg      db -3
     a_word          dw 3            ; Word
@@ -38,14 +38,11 @@ add_float_line PROTO :DWORD, :REAL8
     c_qword_neg     dq -3122007
 
     d_single        dd 0.001        ; Single
-    d_single_neg    dd -0.001
     e_double        dq 0.076        ; Double
-    e_double_neg    dq -0.076
     f_extended      dt 759.612      ; Extended
-    f_extended_neg  dt -759.612
-    bday_str        db "03122007", 0
+    str_bday        db "03122007", 0 
 
-    ; Вихідні значення
+    ; Вихідні значення:
     a_val           dd 3            ; Dword
     b_val           dd 312          ; Dword
     c_val           dd 3122007      ; Dword
@@ -55,41 +52,39 @@ add_float_line PROTO :DWORD, :REAL8
 
     fmt_int         db "%s %d", 13, 10, 0
     fmt_float       db "%s %.3f", 13, 10, 0
-    fmt_str         db "Дата: %s", 13, 10, 0
     str_title       db "Лабораторна 2", 0
     
     str_line_1      db "ПІБ: Куц Анна Василівна", 13, 10, 0
     str_line_2      db "Варіант: 10:", 13, 10, 0
-    str_line_3      db "Дата народження: 03.12.2007", 13, 10, 0
+    str_line_3      db "Дата народження: 03.12.2007 (%s)", 13, 10, 0
     str_line_4      db "Номер залікової книжки: 4110:", 13, 10, 0
     str_line_5      db "Константи:", 13, 10, 0
     
-    label_a_pos     db " +A:", 0
-    label_a_neg     db " -A:", 0
-    label_b_pos     db " +B:", 0
-    label_c_pos     db " +C:", 0
-    label_c_neg     db " -C:", 0
-    label_d_pos     db " +D:", 0
-    label_d_neg     db " -D:", 0
-    label_e_pos     db " +E:", 0
-    label_e_neg     db " -E:", 0
-    label_f_pos     db " +F:", 0
-    label_f_neg     db " -F:", 0
+    label_a_pos     db "+A:", 0
+    label_a_neg     db "-A:", 0
+    label_b_pos     db "+B:", 0
+    label_c_pos     db "+C:", 0
+    label_c_neg     db "-C:", 0
+    label_d_pos     db "+D:", 0
+    label_d_neg     db "-D:", 0
+    label_e_pos     db "+E:", 0
+    label_e_neg     db "-E:", 0
+    label_f_pos     db "+F:", 0
+    label_f_neg     db "-F:", 0
 
 .data?
     buffer_main     db 2048 dup(?)
-    buffer_temp     db 128 dup(?)
+    buffer_temp     db 256 dup(?)
 
 .code
 main:
     invoke crt_strcpy, addr buffer_main, addr str_line_1
     invoke crt_strcat, addr buffer_main, addr str_line_2
-    invoke crt_strcat, addr buffer_main, addr str_line_3
-    invoke crt_strcat, addr buffer_main, addr str_line_4
     
-    invoke crt_sprintf, addr buffer_temp, addr fmt_str, addr bday_str
+    invoke crt_sprintf, addr buffer_temp, addr str_line_3, addr str_bday
     invoke crt_strcat, addr buffer_main, addr buffer_temp
     
+    invoke crt_strcat, addr buffer_main, addr str_line_4
     invoke crt_strcat, addr buffer_main, addr str_line_5
 
     invoke add_int_line, addr label_a_pos, a_val
@@ -108,7 +103,7 @@ main:
     invoke add_float_line, addr label_d_pos, d_val
     
     fld d_val
-    fchs           
+    fchs             
     sub esp, 8
     fstp qword ptr [esp]
     invoke add_float_line, addr label_d_neg, qword ptr [esp]
@@ -117,7 +112,7 @@ main:
     invoke add_float_line, addr label_e_pos, e_val
     
     fld e_val
-    fchs           
+    fchs
     sub esp, 8
     fstp qword ptr [esp]
     invoke add_float_line, addr label_e_neg, qword ptr [esp]
@@ -126,7 +121,7 @@ main:
     invoke add_float_line, addr label_f_pos, f_val
     
     fld f_val
-    fchs           
+    fchs
     sub esp, 8
     fstp qword ptr [esp]
     invoke add_float_line, addr label_f_neg, qword ptr [esp]
@@ -134,16 +129,16 @@ main:
 
     invoke MessageBoxA, NULL, addr buffer_main, addr str_title, MB_OK
     invoke ExitProcess, 0
-    add_int_line proc lbl_ptr:DWORD, val_int:DWORD
+
+add_int_line proc lbl_ptr:DWORD, val_int:DWORD
     invoke crt_sprintf, addr buffer_temp, addr fmt_int, lbl_ptr, val_int
     invoke crt_strcat, addr buffer_main, addr buffer_temp
     ret
-    
-    add_int_line endp
-    
-    add_float_line proc lbl_ptr:DWORD, val_float:REAL8
+add_int_line endp
+add_float_line proc lbl_ptr:DWORD, val_float:REAL8
     invoke crt_sprintf, addr buffer_temp, addr fmt_float, lbl_ptr, val_float
     invoke crt_strcat, addr buffer_main, addr buffer_temp
     ret
-    add_float_line endp
-    end main
+add_float_line endp
+
+end main

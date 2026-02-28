@@ -15,7 +15,7 @@ add_int_line PROTO :DWORD, :DWORD
 add_float_line PROTO :DWORD, :REAL8
 
 .data
-    ; Константи:
+    ; Константи
     a_byte          db 3            ; Byte
     a_byte_neg      db -3
     a_word          dw 3            ; Word
@@ -38,11 +38,14 @@ add_float_line PROTO :DWORD, :REAL8
     c_qword_neg     dq -3122007
 
     d_single        dd 0.001        ; Single
+    d_single_neg    dd -0.001
     e_double        dq 0.076        ; Double
+    e_double_neg    dq -0.076
     f_extended      dt 759.612      ; Extended
+    f_extended_neg  dt -759.612
     str_bday        db "03122007", 0 
 
-    ; Вихідні значення:
+    ; Вихідні значення
     a_val           dd 3            ; Dword
     b_val           dd 312          ; Dword
     c_val           dd 3122007      ; Dword
@@ -56,7 +59,7 @@ add_float_line PROTO :DWORD, :REAL8
     
     str_line_1      db "ПІБ: Куц Анна Василівна", 13, 10, 0
     str_line_2      db "Варіант: 10:", 13, 10, 0
-    str_line_3      db "Дата народження: 03.12.2007 (%s)", 13, 10, 0
+    str_line_3      db "Дата народження: 03.12.2007 (%s)", 13, 10, 0 ;
     str_line_4      db "Номер залікової книжки: 4110:", 13, 10, 0
     str_line_5      db "Константи:", 13, 10, 0
     
@@ -103,7 +106,7 @@ main:
     invoke add_float_line, addr label_d_pos, d_val
     
     fld d_val
-    fchs             
+    fchs          
     sub esp, 8
     fstp qword ptr [esp]
     invoke add_float_line, addr label_d_neg, qword ptr [esp]
@@ -135,6 +138,7 @@ add_int_line proc lbl_ptr:DWORD, val_int:DWORD
     invoke crt_strcat, addr buffer_main, addr buffer_temp
     ret
 add_int_line endp
+
 add_float_line proc lbl_ptr:DWORD, val_float:REAL8
     invoke crt_sprintf, addr buffer_temp, addr fmt_float, lbl_ptr, val_float
     invoke crt_strcat, addr buffer_main, addr buffer_temp

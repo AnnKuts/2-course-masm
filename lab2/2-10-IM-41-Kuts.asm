@@ -43,6 +43,7 @@ add_float_line PROTO :DWORD, :REAL8
     e_double_neg    dq -0.076
     f_extended      dt 759.612      ; Extended
     f_extended_neg  dt -759.612
+    bday_str        db "03122007", 0
 
     ; Вихідні значення
     a_val           dd 3            ; Dword
@@ -54,13 +55,14 @@ add_float_line PROTO :DWORD, :REAL8
 
     fmt_int         db "%s %d", 13, 10, 0
     fmt_float       db "%s %.3f", 13, 10, 0
+    fmt_str         db " Дата (симв. рядок): %s", 13, 10, 0
     str_title       db "Лабораторна 2", 0
     
     str_line_1      db "ПІБ: Куц Анна Василівна", 13, 10, 0
-    str_line_2      db " Варіант: 10:", 13, 10, 0
+    str_line_2      db "Варіант: 10:", 13, 10, 0
     str_line_3      db "Дата народження: 03.12.2007", 13, 10, 0
-    str_line_4      db " Номер залікової книжки: 4110:", 13, 10, 0
-    str_line_5      db " Константи:", 13, 10, 0
+    str_line_4      db "Номер залікової книжки: 4110:", 13, 10, 0
+    str_line_5      db "Константи:", 13, 10, 0
     
     label_a_pos     db " +A:", 0
     label_a_neg     db " -A:", 0
@@ -84,6 +86,10 @@ main:
     invoke crt_strcat, addr buffer_main, addr str_line_2
     invoke crt_strcat, addr buffer_main, addr str_line_3
     invoke crt_strcat, addr buffer_main, addr str_line_4
+    
+    invoke crt_sprintf, addr buffer_temp, addr fmt_str, addr bday_str
+    invoke crt_strcat, addr buffer_main, addr buffer_temp
+    
     invoke crt_strcat, addr buffer_main, addr str_line_5
 
     invoke add_int_line, addr label_a_pos, a_val
@@ -102,7 +108,7 @@ main:
     invoke add_float_line, addr label_d_pos, d_val
     
     fld d_val
-    fchs             
+    fchs           
     sub esp, 8
     fstp qword ptr [esp]
     invoke add_float_line, addr label_d_neg, qword ptr [esp]
@@ -111,7 +117,7 @@ main:
     invoke add_float_line, addr label_e_pos, e_val
     
     fld e_val
-    fchs             
+    fchs           
     sub esp, 8
     fstp qword ptr [esp]
     invoke add_float_line, addr label_e_neg, qword ptr [esp]
@@ -120,7 +126,7 @@ main:
     invoke add_float_line, addr label_f_pos, f_val
     
     fld f_val
-    fchs             
+    fchs           
     sub esp, 8
     fstp qword ptr [esp]
     invoke add_float_line, addr label_f_neg, qword ptr [esp]
@@ -128,17 +134,16 @@ main:
 
     invoke MessageBoxA, NULL, addr buffer_main, addr str_title, MB_OK
     invoke ExitProcess, 0
-
-add_int_line proc lbl_ptr:DWORD, val_int:DWORD
+    add_int_line proc lbl_ptr:DWORD, val_int:DWORD
     invoke crt_sprintf, addr buffer_temp, addr fmt_int, lbl_ptr, val_int
     invoke crt_strcat, addr buffer_main, addr buffer_temp
     ret
-add_int_line endp
-
-add_float_line proc lbl_ptr:DWORD, val_float:REAL8
+    
+    add_int_line endp
+    
+    add_float_line proc lbl_ptr:DWORD, val_float:REAL8
     invoke crt_sprintf, addr buffer_temp, addr fmt_float, lbl_ptr, val_float
     invoke crt_strcat, addr buffer_main, addr buffer_temp
     ret
-add_float_line endp
-
-end main
+    add_float_line endp
+    end main

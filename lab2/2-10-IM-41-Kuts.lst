@@ -1,4 +1,4 @@
-Microsoft (R) Macro Assembler Version 6.14.8444		    02/28/26 11:05:15
+Microsoft (R) Macro Assembler Version 6.14.8444		    02/28/26 12:01:04
 2-10-IM-41-Kuts.asm					     Page 1 - 1
 
 
@@ -61825,31 +61825,43 @@ Microsoft (R) Macro Assembler Version 6.14.8444		    02/28/26 11:05:15
 	     4008BDE72B020C49BA5E
  00000074			    f_extended_neg  dt -759.612
 	     C008BDE72B020C49BA5E
+ 0000007E 30 33 31 32 32	    bday_str        db "03122007", 0
+	     30 30 37 00
 
 				    ; Вихідні значення
- 0000007E 00000003		    a_val           dd 3            ; Dword
- 00000082 00000138		    b_val           dd 312          ; Dword
- 00000086 002FA357		    c_val           dd 3122007      ; Dword
- 0000008A			    d_val           dq 0.001        ; Qword
+ 00000087 00000003		    a_val           dd 3            ; Dword
+ 0000008B 00000138		    b_val           dd 312          ; Dword
+ 0000008F 002FA357		    c_val           dd 3122007      ; Dword
+ 00000093			    d_val           dq 0.001        ; Qword
 	     3F50624DD2F1A9FC
- 00000092			    e_val           dq 0.076        ; Qword
+ 0000009B			    e_val           dq 0.076        ; Qword
 	     3FB374BC6A7EF9DB
- 0000009A			    f_val           dq 759.612      ; Qword
+ 000000A3			    f_val           dq 759.612      ; Qword
 	     4087BCE560418937
 
- 000000A2 25 73 20 25 64	    fmt_int         db "%s %d", 13, 10, 0
+ 000000AB 25 73 20 25 64	    fmt_int         db "%s %d", 13, 10, 0
 	     0D 0A 00
- 000000AA 25 73 20 25 2E	    fmt_float       db "%s %.3f", 13, 10, 0
+ 000000B3 25 73 20 25 2E	    fmt_float       db "%s %.3f", 13, 10, 0
 	     33 66 0D 0A
 	     00
- 000000B4 D0 9B D0 B0 D0	    str_title       db "Лабораторна 2", 0
+ 000000BD 20 D0 94 D0 B0	    fmt_str         db " Дата (симв. рядок): %s", 13, 10, 0
+	     D1 82 D0 B0
+	     20 28 D1 81
+	     D0 B8 D0 BC
+	     D0 B2 2E 20
+	     D1 80 D1 8F
+	     D0 B4 D0 BE
+	     D0 BA 29 3A
+	     20 25 73 0D
+	     0A 00
+ 000000E4 D0 9B D0 B0 D0	    str_title       db "Лабораторна 2", 0
 	     B1 D0 BE D1
 	     80 D0 B0 D1
 	     82 D0 BE D1
 	     80 D0 BD D0
 	     B0 20 32 00
 				    
- 000000CD D0 9F D0 86 D0	    str_line_1      db "ПІБ: Куц Анна Василівна", 13, 10, 0
+ 000000FD D0 9F D0 86 D0	    str_line_1      db "ПІБ: Куц Анна Василівна", 13, 10, 0
 	     91 3A 20 D0
 	     9A D1 83 D1
 	     86 20 D0 90
@@ -61860,13 +61872,13 @@ Microsoft (R) Macro Assembler Version 6.14.8444		    02/28/26 11:05:15
 	     BB D1 96 D0
 	     B2 D0 BD D0
 	     B0 0D 0A 00
- 000000FA 20 D0 92 D0 B0	    str_line_2      db " Варіант: 10:", 13, 10, 0
-	     D1 80 D1 96
-	     D0 B0 D0 BD
-	     D1 82 3A 20
-	     31 30 3A 0D
-	     0A 00
- 00000111 D0 94 D0 B0 D1	    str_line_3      db "Дата народження: 03.12.2007", 13, 10, 0
+ 0000012A D0 92 D0 B0 D1	    str_line_2      db "Варіант: 10:", 13, 10, 0
+	     80 D1 96 D0
+	     B0 D0 BD D1
+	     82 3A 20 31
+	     30 3A 0D 0A
+	     00
+ 00000140 D0 94 D0 B0 D1	    str_line_3      db "Дата народження: 03.12.2007", 13, 10, 0
 	     82 D0 B0 20
 	     D0 BD D0 B0
 	     D1 80 D0 BE
@@ -61877,37 +61889,37 @@ Microsoft (R) Macro Assembler Version 6.14.8444		    02/28/26 11:05:15
 	     2E 31 32 2E
 	     32 30 30 37
 	     0D 0A 00
- 0000013D 20 D0 9D D0 BE	    str_line_4      db " Номер залікової книжки: 4110:", 13, 10, 0
-	     D0 BC D0 B5
-	     D1 80 20 D0
-	     B7 D0 B0 D0
-	     BB D1 96 D0
-	     BA D0 BE D0
-	     B2 D0 BE D1
-	     97 20 D0 BA
-	     D0 BD D0 B8
-	     D0 B6 D0 BA
-	     D0 B8 3A 20
-	     34 31 31 30
-	     3A 0D 0A 00
- 00000172 20 D0 9A D0 BE	    str_line_5      db " Константи:", 13, 10, 0
-	     D0 BD D1 81
-	     D1 82 D0 B0
-	     D0 BD D1 82
-	     D0 B8 3A 0D
-	     0A 00
+ 0000016C D0 9D D0 BE D0	    str_line_4      db "Номер залікової книжки: 4110:", 13, 10, 0
+	     BC D0 B5 D1
+	     80 20 D0 B7
+	     D0 B0 D0 BB
+	     D1 96 D0 BA
+	     D0 BE D0 B2
+	     D0 BE D1 97
+	     20 D0 BA D0
+	     BD D0 B8 D0
+	     B6 D0 BA D0
+	     B8 3A 20 34
+	     31 31 30 3A
+	     0D 0A 00
+ 000001A0 D0 9A D0 BE D0	    str_line_5      db "Константи:", 13, 10, 0
+	     BD D1 81 D1
+	     82 D0 B0 D0
+	     BD D1 82 D0
+	     B8 3A 0D 0A
+	     00
 				    
- 00000189 20 2B 41 3A 00	    label_a_pos     db " +A:", 0
- 0000018E 20 2D 41 3A 00	    label_a_neg     db " -A:", 0
- 00000193 20 2B 42 3A 00	    label_b_pos     db " +B:", 0
- 00000198 20 2B 43 3A 00	    label_c_pos     db " +C:", 0
- 0000019D 20 2D 43 3A 00	    label_c_neg     db " -C:", 0
- 000001A2 20 2B 44 3A 00	    label_d_pos     db " +D:", 0
- 000001A7 20 2D 44 3A 00	    label_d_neg     db " -D:", 0
- 000001AC 20 2B 45 3A 00	    label_e_pos     db " +E:", 0
- 000001B1 20 2D 45 3A 00	    label_e_neg     db " -E:", 0
- 000001B6 20 2B 46 3A 00	    label_f_pos     db " +F:", 0
- 000001BB 20 2D 46 3A 00	    label_f_neg     db " -F:", 0
+ 000001B6 20 2B 41 3A 00	    label_a_pos     db " +A:", 0
+ 000001BB 20 2D 41 3A 00	    label_a_neg     db " -A:", 0
+ 000001C0 20 2B 42 3A 00	    label_b_pos     db " +B:", 0
+ 000001C5 20 2B 43 3A 00	    label_c_pos     db " +C:", 0
+ 000001CA 20 2D 43 3A 00	    label_c_neg     db " -C:", 0
+ 000001CF 20 2B 44 3A 00	    label_d_pos     db " +D:", 0
+ 000001D4 20 2D 44 3A 00	    label_d_neg     db " -D:", 0
+ 000001D9 20 2B 45 3A 00	    label_e_pos     db " +E:", 0
+ 000001DE 20 2D 45 3A 00	    label_e_neg     db " -E:", 0
+ 000001E3 20 2B 46 3A 00	    label_f_pos     db " +F:", 0
+ 000001E8 20 2D 46 3A 00	    label_f_neg     db " -F:", 0
 
  00000000			.data?
  00000000    00000800 [		    buffer_main     db 2048 dup(?)
@@ -61923,65 +61935,68 @@ Microsoft (R) Macro Assembler Version 6.14.8444		    02/28/26 11:05:15
 				    invoke crt_strcat, addr buffer_main, addr str_line_2
 				    invoke crt_strcat, addr buffer_main, addr str_line_3
 				    invoke crt_strcat, addr buffer_main, addr str_line_4
+				    
+				    invoke crt_sprintf, addr buffer_temp, addr fmt_str, addr bday_str
+				    invoke crt_strcat, addr buffer_main, addr buffer_temp
+				    
 				    invoke crt_strcat, addr buffer_main, addr str_line_5
 
 				    invoke add_int_line, addr label_a_pos, a_val
 				    
- 0000006F  A1 0000007E R	    mov eax, a_val
- 00000074  F7 D8		    neg eax
+ 0000009A  A1 00000087 R	    mov eax, a_val
+ 0000009F  F7 D8		    neg eax
 				    invoke add_int_line, addr label_a_neg, eax
 				    
 				    invoke add_int_line, addr label_b_pos, b_val
 				    invoke add_int_line, addr label_c_pos, c_val
 				    
- 000000A1  A1 00000086 R	    mov eax, c_val
- 000000A6  F7 D8		    neg eax
+ 000000CC  A1 0000008F R	    mov eax, c_val
+ 000000D1  F7 D8		    neg eax
 				    invoke add_int_line, addr label_c_neg, eax
 
 				    invoke add_float_line, addr label_d_pos, d_val
 				    
- 000000C9  DD 05 0000008A R	    fld d_val
- 000000CF  D9 E0		    fchs             
- 000000D1  83 EC 08		    sub esp, 8
- 000000D4  DD 1C 24		    fstp qword ptr [esp]
+ 000000F4  DD 05 00000093 R	    fld d_val
+ 000000FA  D9 E0		    fchs           
+ 000000FC  83 EC 08		    sub esp, 8
+ 000000FF  DD 1C 24		    fstp qword ptr [esp]
 				    invoke add_float_line, addr label_d_neg, qword ptr [esp]
- 000000E8  83 C4 08		    add esp, 8
+ 00000113  83 C4 08		    add esp, 8
 
 				    invoke add_float_line, addr label_e_pos, e_val
 				    
- 00000101  DD 05 00000092 R	    fld e_val
- 00000107  D9 E0		    fchs             
- 00000109  83 EC 08		    sub esp, 8
- 0000010C  DD 1C 24		    fstp qword ptr [esp]
+ 0000012C  DD 05 0000009B R	    fld e_val
+ 00000132  D9 E0		    fchs           
+ 00000134  83 EC 08		    sub esp, 8
+ 00000137  DD 1C 24		    fstp qword ptr [esp]
 				    invoke add_float_line, addr label_e_neg, qword ptr [esp]
- 00000120  83 C4 08		    add esp, 8
+ 0000014B  83 C4 08		    add esp, 8
 
 				    invoke add_float_line, addr label_f_pos, f_val
 				    
- 00000139  DD 05 0000009A R	    fld f_val
- 0000013F  D9 E0		    fchs             
- 00000141  83 EC 08		    sub esp, 8
- 00000144  DD 1C 24		    fstp qword ptr [esp]
+ 00000164  DD 05 000000A3 R	    fld f_val
+ 0000016A  D9 E0		    fchs           
+ 0000016C  83 EC 08		    sub esp, 8
+ 0000016F  DD 1C 24		    fstp qword ptr [esp]
 				    invoke add_float_line, addr label_f_neg, qword ptr [esp]
- 00000158  83 C4 08		    add esp, 8
+ 00000183  83 C4 08		    add esp, 8
 
 				    invoke MessageBoxA, NULL, addr buffer_main, addr str_title, MB_OK
 				    invoke ExitProcess, 0
-
- 00000175			add_int_line proc lbl_ptr:DWORD, val_int:DWORD
+ 000001A0			    add_int_line proc lbl_ptr:DWORD, val_int:DWORD
 				    invoke crt_sprintf, addr buffer_temp, addr fmt_int, lbl_ptr, val_int
 				    invoke crt_strcat, addr buffer_main, addr buffer_temp
 				    ret
- 000001A8			add_int_line endp
-
- 000001A8			add_float_line proc lbl_ptr:DWORD, val_float:REAL8
+				    
+ 000001D3			    add_int_line endp
+				    
+ 000001D3			    add_float_line proc lbl_ptr:DWORD, val_float:REAL8
 				    invoke crt_sprintf, addr buffer_temp, addr fmt_float, lbl_ptr, val_float
 				    invoke crt_strcat, addr buffer_main, addr buffer_temp
 				    ret
- 000001DE			add_float_line endp
-
-				end main
-Microsoft (R) Macro Assembler Version 6.14.8444		    02/28/26 11:05:15
+ 00000209			    add_float_line endp
+				    end main
+Microsoft (R) Macro Assembler Version 6.14.8444		    02/28/26 12:01:04
 2-10-IM-41-Kuts.asm					     Symbols 2 - 1
 
 
@@ -72151,8 +72166,8 @@ Segments and Groups:
 
 FLAT . . . . . . . . . . . . . .	GROUP
 _BSS . . . . . . . . . . . . . .	32 Bit	 00000880 DWord	  Public  'BSS'  
-_DATA  . . . . . . . . . . . . .	32 Bit	 000001C0 DWord	  Public  'DATA'	
-_TEXT  . . . . . . . . . . . . .	32 Bit	 000001DE DWord	  Public  'CODE'	
+_DATA  . . . . . . . . . . . . .	32 Bit	 000001ED DWord	  Public  'DATA'	
+_TEXT  . . . . . . . . . . . . .	32 Bit	 00000209 DWord	  Public  'CODE'	
 
 
 Procedures,  parameters and locals:
@@ -73577,10 +73592,10 @@ _llseek  . . . . . . . . . . . .	P Near	 00000000 FLAT	Length= 00000000 External
 _lopen . . . . . . . . . . . . .	P Near	 00000000 FLAT	Length= 00000000 External STDCALL
 _lread . . . . . . . . . . . . .	P Near	 00000000 FLAT	Length= 00000000 External STDCALL
 _lwrite  . . . . . . . . . . . .	P Near	 00000000 FLAT	Length= 00000000 External STDCALL
-add_float_line . . . . . . . . .	P Near	 000001A8 _TEXT	Length= 00000036 Public STDCALL
+add_float_line . . . . . . . . .	P Near	 000001D3 _TEXT	Length= 00000036 Public STDCALL
   lbl_ptr  . . . . . . . . . . .	DWord	 bp + 00000008
   val_float  . . . . . . . . . .	QWord	 bp + 0000000C
-add_int_line . . . . . . . . . .	P Near	 00000175 _TEXT	Length= 00000033 Public STDCALL
+add_int_line . . . . . . . . . .	P Near	 000001A0 _TEXT	Length= 00000033 Public STDCALL
   lbl_ptr  . . . . . . . . . . .	DWord	 bp + 00000008
   val_int  . . . . . . . . . . .	DWord	 bp + 0000000C
 keybd_event  . . . . . . . . . .	P Near	 00000000 FLAT	Length= 00000000 External STDCALL
@@ -110708,16 +110723,17 @@ a_dword_neg  . . . . . . . . . .	DWord	 0000000A _DATA
 a_dword  . . . . . . . . . . . .	DWord	 00000006 _DATA	
 a_qword_neg  . . . . . . . . . .	QWord	 00000016 _DATA	
 a_qword  . . . . . . . . . . . .	QWord	 0000000E _DATA	
-a_val  . . . . . . . . . . . . .	DWord	 0000007E _DATA	
+a_val  . . . . . . . . . . . . .	DWord	 00000087 _DATA	
 a_word_neg . . . . . . . . . . .	Word	 00000004 _DATA	
 a_word . . . . . . . . . . . . .	Word	 00000002 _DATA	
 b_dword_neg  . . . . . . . . . .	DWord	 00000026 _DATA	
 b_dword  . . . . . . . . . . . .	DWord	 00000022 _DATA	
 b_qword_neg  . . . . . . . . . .	QWord	 00000032 _DATA	
 b_qword  . . . . . . . . . . . .	QWord	 0000002A _DATA	
-b_val  . . . . . . . . . . . . .	DWord	 00000082 _DATA	
+b_val  . . . . . . . . . . . . .	DWord	 0000008B _DATA	
 b_word_neg . . . . . . . . . . .	Word	 00000020 _DATA	
 b_word . . . . . . . . . . . . .	Word	 0000001E _DATA	
+bday_str . . . . . . . . . . . .	Byte	 0000007E _DATA	
 buffer_main  . . . . . . . . . .	Byte	 00000000 _BSS	
 buffer_temp  . . . . . . . . . .	Byte	 00000800 _BSS	
 cPRIV_KEY_CACHE_MAX_ITEMS_DEFAULT 	Number	 00000014h   
@@ -110726,7 +110742,7 @@ c_dword_neg  . . . . . . . . . .	DWord	 0000003E _DATA
 c_dword  . . . . . . . . . . . .	DWord	 0000003A _DATA	
 c_qword_neg  . . . . . . . . . .	QWord	 0000004A _DATA	
 c_qword  . . . . . . . . . . . .	QWord	 00000042 _DATA	
-c_val  . . . . . . . . . . . . .	DWord	 00000086 _DATA	
+c_val  . . . . . . . . . . . . .	DWord	 0000008F _DATA	
 cbNDRContext . . . . . . . . . .	Number	 00000014h   
 cchProfileNameMax  . . . . . . .	Number	 00000040h   
 cchProfilePassMax  . . . . . . .	Number	 00000040h   
@@ -111530,13 +111546,13 @@ ctype_SESSION_ipv4 . . . . . . .	Number	 00000001h
 ctype_STYLE  . . . . . . . . . .	Number	 00000001h   
 d_single_neg . . . . . . . . . .	DWord	 00000056 _DATA	
 d_single . . . . . . . . . . . .	DWord	 00000052 _DATA	
-d_val  . . . . . . . . . . . . .	QWord	 0000008A _DATA	
+d_val  . . . . . . . . . . . . .	QWord	 00000093 _DATA	
 dwFORCE_KEY_PROTECTION_DISABLED 	Number	 00000000h   
 dwFORCE_KEY_PROTECTION_HIGH  . .	Number	 00000002h   
 dwFORCE_KEY_PROTECTION_USER_SELECT .	Number	 00000001h   
 e_double_neg . . . . . . . . . .	QWord	 00000062 _DATA	
 e_double . . . . . . . . . . . .	QWord	 0000005A _DATA	
-e_val  . . . . . . . . . . . . .	QWord	 00000092 _DATA	
+e_val  . . . . . . . . . . . . .	QWord	 0000009B _DATA	
 edt10  . . . . . . . . . . . . .	Number	 00000489h   
 edt11  . . . . . . . . . . . . .	Number	 0000048Ah   
 edt12  . . . . . . . . . . . . .	Number	 0000048Bh   
@@ -111556,9 +111572,10 @@ edt9 . . . . . . . . . . . . . .	Number	 00000488h
 fMapiUnicode . . . . . . . . . .	Number	 00000000h   
 f_extended_neg . . . . . . . . .	TWord	 00000074 _DATA	
 f_extended . . . . . . . . . . .	TWord	 0000006A _DATA	
-f_val  . . . . . . . . . . . . .	QWord	 0000009A _DATA	
-fmt_float  . . . . . . . . . . .	Byte	 000000AA _DATA	
-fmt_int  . . . . . . . . . . . .	Byte	 000000A2 _DATA	
+f_val  . . . . . . . . . . . . .	QWord	 000000A3 _DATA	
+fmt_float  . . . . . . . . . . .	Byte	 000000B3 _DATA	
+fmt_int  . . . . . . . . . . . .	Byte	 000000AB _DATA	
+fmt_str  . . . . . . . . . . . .	Byte	 000000BD _DATA	
 fnevCriticalError  . . . . . . .	Number	 00000001h   
 fnevExtended . . . . . . . . . .	Number	 -80000000h   
 fnevNewMail  . . . . . . . . . .	Number	 00000002h   
@@ -111598,17 +111615,17 @@ idsNoHelpMemory  . . . . . . . .	Number	 000003F0h
 idsPassword  . . . . . . . . . .	Number	 000003EBh   
 idsScreenSaver . . . . . . . . .	Number	 000003EAh   
 lDefaultTab  . . . . . . . . . .	Number	 000002D0h   
-label_a_neg  . . . . . . . . . .	Byte	 0000018E _DATA	
-label_a_pos  . . . . . . . . . .	Byte	 00000189 _DATA	
-label_b_pos  . . . . . . . . . .	Byte	 00000193 _DATA	
-label_c_neg  . . . . . . . . . .	Byte	 0000019D _DATA	
-label_c_pos  . . . . . . . . . .	Byte	 00000198 _DATA	
-label_d_neg  . . . . . . . . . .	Byte	 000001A7 _DATA	
-label_d_pos  . . . . . . . . . .	Byte	 000001A2 _DATA	
-label_e_neg  . . . . . . . . . .	Byte	 000001B1 _DATA	
-label_e_pos  . . . . . . . . . .	Byte	 000001AC _DATA	
-label_f_neg  . . . . . . . . . .	Byte	 000001BB _DATA	
-label_f_pos  . . . . . . . . . .	Byte	 000001B6 _DATA	
+label_a_neg  . . . . . . . . . .	Byte	 000001BB _DATA	
+label_a_pos  . . . . . . . . . .	Byte	 000001B6 _DATA	
+label_b_pos  . . . . . . . . . .	Byte	 000001C0 _DATA	
+label_c_neg  . . . . . . . . . .	Byte	 000001CA _DATA	
+label_c_pos  . . . . . . . . . .	Byte	 000001C5 _DATA	
+label_d_neg  . . . . . . . . . .	Byte	 000001D4 _DATA	
+label_d_pos  . . . . . . . . . .	Byte	 000001CF _DATA	
+label_e_neg  . . . . . . . . . .	Byte	 000001DE _DATA	
+label_e_pos  . . . . . . . . . .	Byte	 000001D9 _DATA	
+label_f_neg  . . . . . . . . . .	Byte	 000001E8 _DATA	
+label_f_pos  . . . . . . . . . .	Byte	 000001E3 _DATA	
 lst10  . . . . . . . . . . . . .	Number	 00000469h   
 lst11  . . . . . . . . . . . . .	Number	 0000046Ah   
 lst12  . . . . . . . . . . . . .	Number	 0000046Bh   
@@ -111710,12 +111727,12 @@ stc6 . . . . . . . . . . . . . .	Number	 00000445h
 stc7 . . . . . . . . . . . . . .	Number	 00000446h   
 stc8 . . . . . . . . . . . . . .	Number	 00000447h   
 stc9 . . . . . . . . . . . . . .	Number	 00000448h   
-str_line_1 . . . . . . . . . . .	Byte	 000000CD _DATA	
-str_line_2 . . . . . . . . . . .	Byte	 000000FA _DATA	
-str_line_3 . . . . . . . . . . .	Byte	 00000111 _DATA	
-str_line_4 . . . . . . . . . . .	Byte	 0000013D _DATA	
-str_line_5 . . . . . . . . . . .	Byte	 00000172 _DATA	
-str_title  . . . . . . . . . . .	Byte	 000000B4 _DATA	
+str_line_1 . . . . . . . . . . .	Byte	 000000FD _DATA	
+str_line_2 . . . . . . . . . . .	Byte	 0000012A _DATA	
+str_line_3 . . . . . . . . . . .	Byte	 00000140 _DATA	
+str_line_4 . . . . . . . . . . .	Byte	 0000016C _DATA	
+str_line_5 . . . . . . . . . . .	Byte	 000001A0 _DATA	
+str_title  . . . . . . . . . . .	Byte	 000000E4 _DATA	
 szFORCE_KEY_PROTECTION . . . . .	Text   	 "ForceKeyProtection"
 szKEY_CACHE_ENABLED  . . . . . .	Text   	 "CachePrivateKeys"
 szKEY_CACHE_SECONDS  . . . . . .	Text   	 "PrivateKeyLifetimeSeconds"

@@ -1,4 +1,4 @@
-Microsoft (R) Macro Assembler Version 6.14.8444		    02/28/26 12:01:04
+Microsoft (R) Macro Assembler Version 6.14.8444		    02/28/26 12:06:57
 2-10-IM-41-Kuts.asm					     Page 1 - 1
 
 
@@ -61844,24 +61844,18 @@ Microsoft (R) Macro Assembler Version 6.14.8444		    02/28/26 12:01:04
  000000B3 25 73 20 25 2E	    fmt_float       db "%s %.3f", 13, 10, 0
 	     33 66 0D 0A
 	     00
- 000000BD 20 D0 94 D0 B0	    fmt_str         db " Дата (симв. рядок): %s", 13, 10, 0
-	     D1 82 D0 B0
-	     20 28 D1 81
-	     D0 B8 D0 BC
-	     D0 B2 2E 20
-	     D1 80 D1 8F
-	     D0 B4 D0 BE
-	     D0 BA 29 3A
+ 000000BD D0 94 D0 B0 D1	    fmt_str         db "Дата: %s", 13, 10, 0
+	     82 D0 B0 3A
 	     20 25 73 0D
 	     0A 00
- 000000E4 D0 9B D0 B0 D0	    str_title       db "Лабораторна 2", 0
+ 000000CC D0 9B D0 B0 D0	    str_title       db "Лабораторна 2", 0
 	     B1 D0 BE D1
 	     80 D0 B0 D1
 	     82 D0 BE D1
 	     80 D0 BD D0
 	     B0 20 32 00
 				    
- 000000FD D0 9F D0 86 D0	    str_line_1      db "ПІБ: Куц Анна Василівна", 13, 10, 0
+ 000000E5 D0 9F D0 86 D0	    str_line_1      db "ПІБ: Куц Анна Василівна", 13, 10, 0
 	     91 3A 20 D0
 	     9A D1 83 D1
 	     86 20 D0 90
@@ -61872,13 +61866,13 @@ Microsoft (R) Macro Assembler Version 6.14.8444		    02/28/26 12:01:04
 	     BB D1 96 D0
 	     B2 D0 BD D0
 	     B0 0D 0A 00
- 0000012A D0 92 D0 B0 D1	    str_line_2      db "Варіант: 10:", 13, 10, 0
+ 00000112 D0 92 D0 B0 D1	    str_line_2      db "Варіант: 10:", 13, 10, 0
 	     80 D1 96 D0
 	     B0 D0 BD D1
 	     82 3A 20 31
 	     30 3A 0D 0A
 	     00
- 00000140 D0 94 D0 B0 D1	    str_line_3      db "Дата народження: 03.12.2007", 13, 10, 0
+ 00000128 D0 94 D0 B0 D1	    str_line_3      db "Дата народження: 03.12.2007", 13, 10, 0
 	     82 D0 B0 20
 	     D0 BD D0 B0
 	     D1 80 D0 BE
@@ -61889,7 +61883,7 @@ Microsoft (R) Macro Assembler Version 6.14.8444		    02/28/26 12:01:04
 	     2E 31 32 2E
 	     32 30 30 37
 	     0D 0A 00
- 0000016C D0 9D D0 BE D0	    str_line_4      db "Номер залікової книжки: 4110:", 13, 10, 0
+ 00000154 D0 9D D0 BE D0	    str_line_4      db "Номер залікової книжки: 4110:", 13, 10, 0
 	     BC D0 B5 D1
 	     80 20 D0 B7
 	     D0 B0 D0 BB
@@ -61902,24 +61896,24 @@ Microsoft (R) Macro Assembler Version 6.14.8444		    02/28/26 12:01:04
 	     B8 3A 20 34
 	     31 31 30 3A
 	     0D 0A 00
- 000001A0 D0 9A D0 BE D0	    str_line_5      db "Константи:", 13, 10, 0
+ 00000188 D0 9A D0 BE D0	    str_line_5      db "Константи:", 13, 10, 0
 	     BD D1 81 D1
 	     82 D0 B0 D0
 	     BD D1 82 D0
 	     B8 3A 0D 0A
 	     00
 				    
- 000001B6 20 2B 41 3A 00	    label_a_pos     db " +A:", 0
- 000001BB 20 2D 41 3A 00	    label_a_neg     db " -A:", 0
- 000001C0 20 2B 42 3A 00	    label_b_pos     db " +B:", 0
- 000001C5 20 2B 43 3A 00	    label_c_pos     db " +C:", 0
- 000001CA 20 2D 43 3A 00	    label_c_neg     db " -C:", 0
- 000001CF 20 2B 44 3A 00	    label_d_pos     db " +D:", 0
- 000001D4 20 2D 44 3A 00	    label_d_neg     db " -D:", 0
- 000001D9 20 2B 45 3A 00	    label_e_pos     db " +E:", 0
- 000001DE 20 2D 45 3A 00	    label_e_neg     db " -E:", 0
- 000001E3 20 2B 46 3A 00	    label_f_pos     db " +F:", 0
- 000001E8 20 2D 46 3A 00	    label_f_neg     db " -F:", 0
+ 0000019E 20 2B 41 3A 00	    label_a_pos     db " +A:", 0
+ 000001A3 20 2D 41 3A 00	    label_a_neg     db " -A:", 0
+ 000001A8 20 2B 42 3A 00	    label_b_pos     db " +B:", 0
+ 000001AD 20 2B 43 3A 00	    label_c_pos     db " +C:", 0
+ 000001B2 20 2D 43 3A 00	    label_c_neg     db " -C:", 0
+ 000001B7 20 2B 44 3A 00	    label_d_pos     db " +D:", 0
+ 000001BC 20 2D 44 3A 00	    label_d_neg     db " -D:", 0
+ 000001C1 20 2B 45 3A 00	    label_e_pos     db " +E:", 0
+ 000001C6 20 2D 45 3A 00	    label_e_neg     db " -E:", 0
+ 000001CB 20 2B 46 3A 00	    label_f_pos     db " +F:", 0
+ 000001D0 20 2D 46 3A 00	    label_f_neg     db " -F:", 0
 
  00000000			.data?
  00000000    00000800 [		    buffer_main     db 2048 dup(?)
@@ -61996,7 +61990,7 @@ Microsoft (R) Macro Assembler Version 6.14.8444		    02/28/26 12:01:04
 				    ret
  00000209			    add_float_line endp
 				    end main
-Microsoft (R) Macro Assembler Version 6.14.8444		    02/28/26 12:01:04
+Microsoft (R) Macro Assembler Version 6.14.8444		    02/28/26 12:06:57
 2-10-IM-41-Kuts.asm					     Symbols 2 - 1
 
 
@@ -72166,7 +72160,7 @@ Segments and Groups:
 
 FLAT . . . . . . . . . . . . . .	GROUP
 _BSS . . . . . . . . . . . . . .	32 Bit	 00000880 DWord	  Public  'BSS'  
-_DATA  . . . . . . . . . . . . .	32 Bit	 000001ED DWord	  Public  'DATA'	
+_DATA  . . . . . . . . . . . . .	32 Bit	 000001D5 DWord	  Public  'DATA'	
 _TEXT  . . . . . . . . . . . . .	32 Bit	 00000209 DWord	  Public  'CODE'	
 
 
@@ -111615,17 +111609,17 @@ idsNoHelpMemory  . . . . . . . .	Number	 000003F0h
 idsPassword  . . . . . . . . . .	Number	 000003EBh   
 idsScreenSaver . . . . . . . . .	Number	 000003EAh   
 lDefaultTab  . . . . . . . . . .	Number	 000002D0h   
-label_a_neg  . . . . . . . . . .	Byte	 000001BB _DATA	
-label_a_pos  . . . . . . . . . .	Byte	 000001B6 _DATA	
-label_b_pos  . . . . . . . . . .	Byte	 000001C0 _DATA	
-label_c_neg  . . . . . . . . . .	Byte	 000001CA _DATA	
-label_c_pos  . . . . . . . . . .	Byte	 000001C5 _DATA	
-label_d_neg  . . . . . . . . . .	Byte	 000001D4 _DATA	
-label_d_pos  . . . . . . . . . .	Byte	 000001CF _DATA	
-label_e_neg  . . . . . . . . . .	Byte	 000001DE _DATA	
-label_e_pos  . . . . . . . . . .	Byte	 000001D9 _DATA	
-label_f_neg  . . . . . . . . . .	Byte	 000001E8 _DATA	
-label_f_pos  . . . . . . . . . .	Byte	 000001E3 _DATA	
+label_a_neg  . . . . . . . . . .	Byte	 000001A3 _DATA	
+label_a_pos  . . . . . . . . . .	Byte	 0000019E _DATA	
+label_b_pos  . . . . . . . . . .	Byte	 000001A8 _DATA	
+label_c_neg  . . . . . . . . . .	Byte	 000001B2 _DATA	
+label_c_pos  . . . . . . . . . .	Byte	 000001AD _DATA	
+label_d_neg  . . . . . . . . . .	Byte	 000001BC _DATA	
+label_d_pos  . . . . . . . . . .	Byte	 000001B7 _DATA	
+label_e_neg  . . . . . . . . . .	Byte	 000001C6 _DATA	
+label_e_pos  . . . . . . . . . .	Byte	 000001C1 _DATA	
+label_f_neg  . . . . . . . . . .	Byte	 000001D0 _DATA	
+label_f_pos  . . . . . . . . . .	Byte	 000001CB _DATA	
 lst10  . . . . . . . . . . . . .	Number	 00000469h   
 lst11  . . . . . . . . . . . . .	Number	 0000046Ah   
 lst12  . . . . . . . . . . . . .	Number	 0000046Bh   
@@ -111727,12 +111721,12 @@ stc6 . . . . . . . . . . . . . .	Number	 00000445h
 stc7 . . . . . . . . . . . . . .	Number	 00000446h   
 stc8 . . . . . . . . . . . . . .	Number	 00000447h   
 stc9 . . . . . . . . . . . . . .	Number	 00000448h   
-str_line_1 . . . . . . . . . . .	Byte	 000000FD _DATA	
-str_line_2 . . . . . . . . . . .	Byte	 0000012A _DATA	
-str_line_3 . . . . . . . . . . .	Byte	 00000140 _DATA	
-str_line_4 . . . . . . . . . . .	Byte	 0000016C _DATA	
-str_line_5 . . . . . . . . . . .	Byte	 000001A0 _DATA	
-str_title  . . . . . . . . . . .	Byte	 000000E4 _DATA	
+str_line_1 . . . . . . . . . . .	Byte	 000000E5 _DATA	
+str_line_2 . . . . . . . . . . .	Byte	 00000112 _DATA	
+str_line_3 . . . . . . . . . . .	Byte	 00000128 _DATA	
+str_line_4 . . . . . . . . . . .	Byte	 00000154 _DATA	
+str_line_5 . . . . . . . . . . .	Byte	 00000188 _DATA	
+str_title  . . . . . . . . . . .	Byte	 000000CC _DATA	
 szFORCE_KEY_PROTECTION . . . . .	Text   	 "ForceKeyProtection"
 szKEY_CACHE_ENABLED  . . . . . .	Text   	 "CachePrivateKeys"
 szKEY_CACHE_SECONDS  . . . . . .	Text   	 "PrivateKeyLifetimeSeconds"

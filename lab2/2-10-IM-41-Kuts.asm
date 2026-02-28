@@ -55,7 +55,7 @@ add_float_line PROTO :DWORD, :REAL8
 
     fmt_int         db "%s %d", 13, 10, 0
     fmt_float       db "%s %.3f", 13, 10, 0
-    fmt_str         db " Дата (симв. рядок): %s", 13, 10, 0
+    fmt_str         db "Дата: %s", 13, 10, 0
     str_title       db "Лабораторна 2", 0
     
     str_line_1      db "ПІБ: Куц Анна Василівна", 13, 10, 0
